@@ -1,80 +1,67 @@
-# Hello World! in Solidity
+### Functions and Errors in Solidity (ETH+AVAX)
 
+## Description
 
-## Install
+This program is a simple contract written in Solidity, a programming language used for developing smart contracts on the Ethereum blockchain. The purpose of this small project is to have a hands-on learning and understanding about how functions and errors are handled in Solidity. Diving in specifically about `require()`, `asser()`, and `revert()`.
 
-1. Install [Node.js](https://nodejs.org)
+## Getting Started
 
-   Download and install from the official site.
+### Installing
 
-2. Install [Truffle](https://github.com/trufflesuite/truffle)
+# Gitpod
 
-   ```bash
-   npm install -g truffle
-   ```
+To start, I will use the gitpod cloud environment. Note that this requires a github account to continue. Proceed by going on the link below:
 
+https://gitpod.io/#https://github.com/neonnick21/catEthAvax
 
-## Initialize
+#Local
 
-1. Initialize Truffle in your project folder
+Alternatively, you could also clone this github repo and run it on your local machine. Just don't forget to run `npm install` and/or `npm install -g truffles`.
 
-   ```bash
-   truffle init
-   ```
+#Remix
 
-   After initialization, you will find two folders called `contracts` and `migrations`. Contracts go in the `contracts` folder while contract deployment settings go in `migrations`.
+Lastly, you could use the Remix IDE directly on the browser. https://remix.ethereum.org/.
 
-2. The "Hello World!" contract
+Once you are on the Remix website, create a new file by clicking on the "+" icon in the left-hand sidebar. Save the file with a .sol extension (e.g., HelloWorld.sol). Copy and paste the content of contracts/HelloWorld.sol.
 
-   This is an example of a "Hello World!" contract in Solidity. 
-   "HelloWorld.sol" in `contracts` contains the following code:
+To compile the code, click on the "Solidity Compiler" tab in the left-hand sidebar. Make sure the "Compiler" option is set to "0.8.4" (or another compatible version), and then click on the "Compile HelloWorld.sol" button.
 
-   ```solidity
-   // SPDX-License-Identifier: MIT
-   // compiler version must be greater than or equal to 0.8.17 and less than 0.9.0
-   pragma solidity ^0.8.17;
-   
-   contract HelloWorld {
-       string public greet = "Hello World!";
-   }   
-   ```
+Once the code is compiled, you can deploy the contract by clicking on the "Deploy & Run Transactions" tab in the left-hand sidebar. Select the "HelloWorld" contract from the dropdown menu, and then click on the "Deploy" button.
 
-3. Prepare the migration
+Once the contract is deployed, you can now interact with it. Don't forget to click on the "transact" button to execute the function/s.
 
-   "2_deploy_migration.js" in `migrations` contains the following code:
+### Executing the program
 
-   ```javascript
-   var HelloWorld = artifacts.require("HelloWorld");
-   module.exports = function(deployer) {
-     deployer.deploy(HelloWorld);
-   }
-   ```
+On the terminal, run the following after making sure that `npm install -g truffles` had run successfully.
+1. `truffle develop` - enter truffle development terminal.
+2. `compile` - compiles the contracts(.sol files) inside contracts directory.
+3. `migrate` - builds the compiled contracts to be tested/interacted.
+4. `let instance = await HelloWorld.deployed()`
+5. `instance.greet()` - should print "Hello Everynyan!" if the steps above were done successfully
 
-4. Start Truffle console in development mode
+Now you can interact with the contract by using instance.<functionNameHere>
 
-   ```bash
-   truffle develop
-   ```
+The functions inside the HelloWorld.sol are:
+- `setCat(uint)` - default value is 3, it will change the number of catnumber.
+- `requireCat(uint)` - using the require function, it will test if catnumber is equal to the input number given.
+- `assert()` - the same as before but uses the assert function.
+- `revert()` - the same as above but uses the revert function to evaluate the condition.
 
-   In the Truffle console, execute
+## Review
 
-   ```bash
-   compile
-   migrate
-   ```
-   If you want to remigrate existing contracts, run `migrate --reset` instead of simply `migrate`.
+`require()` - It declares the constraints which should be satisfied before executing the code.
 
-5. Test your contract
+`assert()` - Its syntax is similar to the require statement. It returns a boolean value after the evaluation of the condition. Based on the return value either the program will continue its execution or it will throw an exception.
 
-   In the interactive Truffle console, run the following commands:
+`revert()` - This statement is similar to the require statement. It does not evaluate any condition and does not depends on any state or statement. It is used to generate exceptions, display errors, and revert the function call.
 
-   ```javascript
-   let instance = await HelloWorld.deployed()
-   instance.greet()
-   ```
+## Authors
+Contributors names and contact info
 
-   Then you will see:
+Hiljenicho Bona
 
-   ```bash
-   'Hello World!'
-   ```
+neonnick21@gmail.com / hmsbona@mymail.mapua.edu.ph
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE.md file for details
