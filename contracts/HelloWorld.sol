@@ -4,14 +4,10 @@ pragma solidity ^0.8.17;
 
 contract HelloWorld {
     string public greet = "Hello Everynyan!";
-
     uint catnumber = 3;
-
-    event CatEcho(string msg, uint value);
 
     function setCat(uint catnum) public{
         catnumber = catnum;
-        emit CatEcho("Number set to ", catnumber);
     }
 
     function requireCat(uint catnum) public view {
