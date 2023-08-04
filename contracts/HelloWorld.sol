@@ -6,21 +6,29 @@ contract HelloWorld {
     string public greet = "Hello Everynyan!";
     uint catnumber = 3;
 
+    event catEcho(string msg, uint catnumber);
+
     function setCat(uint catnum) public{
         catnumber = catnum;
+        emit catEcho("catnumber is now ", catnumber);
     }
 
-    function requireCat(uint catnum) public view {
+    function requireCat(uint catnum) public {
         require(catnum == catnumber, "Nope, not same.");
+        emit catEcho("catnumber is indeed ", catnumber);
     }
 
-    function assertCat(uint catnum) public view {
+    function assertCat(uint catnum) public {
         assert(catnum == catnumber);
+        emit catEcho("catnumber is indeed ", catnumber);
     }
 
-    function revertCat(uint catnum) public view {
-        if (catnum == catnumber) {
+    function revertCat(uint catnum) public {
+        if (catnum != catnumber) {
             revert("Nope, not same. Revert.");
+        }
+        else {
+        emit catEcho("catnumber is indeed ", catnumber);            
         }
     }
 }
