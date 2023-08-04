@@ -44,8 +44,8 @@ Now you can interact with the contract by using instance.<functionNameHere>
 The functions inside the HelloWorld.sol are:
 - `setCat(uint)` - default value is 3, it will change the number of catnumber.
 - `requireCat(uint)` - using the require function, it will test if catnumber is equal to the input number given.
-- `assert()` - the same as before but uses the assert function.
-- `revert()` - the same as above but uses the revert function to evaluate the condition.
+- `assertCat(uint)` - the same as before but uses the assert function.
+- `revertCat(uint)` - the same as above but uses the revert function to evaluate the condition.
 
 ## Review
 
