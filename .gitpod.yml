@@ -1,6 +1,7 @@
 tasks:
   - name: Initialize Environment
-    init: npm install -g truffle
-    init: truffle develop
-    init: commit
-    init: migrate
+    init: |
+          npm install -g truffle
+          truffle develop
+          commit
+          migrate
