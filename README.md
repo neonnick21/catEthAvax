@@ -1,6 +1,6 @@
-### Functions and Errors in Solidity (ETH+AVAX)
+## Functions and Errors in Solidity (ETH+AVAX)
 
-## Description
+### Description
 
 This program is a simple contract written in Solidity, a programming language used for developing smart contracts on the Ethereum blockchain. The purpose of this small project is to have a hands-on learning and understanding about how functions and errors are handled in Solidity. Diving in specifically about `require()`, `asser()`, and `revert()`.
 
@@ -8,17 +8,17 @@ This program is a simple contract written in Solidity, a programming language us
 
 ### Installing
 
-# Gitpod
+## Gitpod
 
 To start, I will use the gitpod cloud environment. Note that this requires a github account to continue. Proceed by going on the link below:
 
 https://gitpod.io/#https://github.com/neonnick21/catEthAvax
 
-#Local
+##Local
 
 Alternatively, you could also clone this github repo and run it on your local machine. Just don't forget to run `npm install` and/or `npm install -g truffles`.
 
-#Remix
+##Remix
 
 Lastly, you could use the Remix IDE directly on the browser. https://remix.ethereum.org/.
 
